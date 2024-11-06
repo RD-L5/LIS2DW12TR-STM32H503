@@ -139,3 +139,15 @@ uint8_t LIS2DW12_ReadID(SPI_HandleTypeDef *hspi) {
 
     return id;
 }
+
+uint8_t LIS2DW12_ReadTemp(SPI_HandleTypeDef *hspi, float *temp) {
+    uint8_t buffer[2];
+    int16_t raw_temp;
+    if(!SPI_Read(hspi, LIS2DW12_OUT_T_L, buffer, 2)) {
+        return 0;
+    }
+    raw_temp = (int16_t)((buffer[1] << 8) | buffer[0]);
+    *temp = ((float)raw_temp) / 256.0f + 25.0f;
+
+    return 1;
+}

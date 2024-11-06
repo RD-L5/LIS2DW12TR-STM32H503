@@ -7,3 +7,4 @@
 ../Core/Src/lis2dw12.c:97:9:LIS2DW12_SetODR	24	static
 ../Core/Src/lis2dw12.c:114:9:LIS2DW12_ReadAccel	32	static
 ../Core/Src/lis2dw12.c:133:9:LIS2DW12_ReadID	24	static
+../Core/Src/lis2dw12.c:143:9:LIS2DW12_ReadTemp	24	static
